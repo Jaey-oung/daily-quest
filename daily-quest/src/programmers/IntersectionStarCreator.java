@@ -78,17 +78,16 @@ class IntersectionStarCreatorSolution {
 				Point intersection = intersection(line[i][0], line[i][1], line[i][2], line[j][0], line[j][1],
 						line[j][2]);
 
-				// 교점이 정수가 아니면 교점 리스트에 추가
+				// 교점이 정수일 때만 교점 리스트에 추가
 				if (intersection != null)
 					points.add(intersection);
-
 			}
 		}
 
 		Point maxPoint = getMaxPoint(points);
 		Point minPoint = getMinPoint(points);
 
-		// 틀을 위한 길이와 높이 구하기
+		// 틀을 위한 너비와 높이 구하기
 		int width = (int) (maxPoint.x - minPoint.x + 1);
 		int height = (int) (maxPoint.y - minPoint.y + 1);
 
@@ -98,7 +97,7 @@ class IntersectionStarCreatorSolution {
 		for (char[] row : board)
 			Arrays.fill(row, '.');
 
-		// 일반 좌표에서 2차원 배열 좌표로 옮기기
+		// 일반 좌표에서 2차원 배열 좌표로 옮기고 별 찍기
 		for (Point p : points) {
 			int x = (int) (p.x - minPoint.x);
 			int y = (int) (maxPoint.y - p.y);
