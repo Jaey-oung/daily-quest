@@ -29,10 +29,10 @@ class CaesarCipherEncoderSolution {
 			return c;
 
 		// c가 대문자인지 소문자인지 구별
-		int offset = Character.isUpperCase(c) ? 'A' : 'a';
-		// A부터 Z까지의 개수로 나눈 후 나머지만큼 더하기
-		int position = (c - offset + n) % ('Z' - 'A' + 1);
+		int base = Character.isUpperCase(c) ? 'A' : 'a';
+		// 나머지만큼 더하고 A부터 Z까지의 개수로 나누기
+		int position = (c - base + n) % ('Z' - 'A' + 1);
 
-		return (char) (offset + position);
+		return (char) (base + position);
 	}
 }
