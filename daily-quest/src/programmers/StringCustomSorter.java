@@ -10,7 +10,7 @@ public class StringCustomSorter {
 		StringCustomSorterSolution solver = new StringCustomSorterSolution();
 		String[] result = solver.solution(strings, n);
 
-		System.out.println(Arrays.toString(strings));
+		System.out.println(Arrays.toString(result));
 	}
 }
 
